@@ -10,6 +10,9 @@ Logged in users can create additional makes and vehicles and edit any entrhyies 
 ###### Sample Makes **Categories**
 ![GitHub Logo](/screenshots/catalog.png)
 
+###### Sample Makes **Categories**
+![GitHub Logo](/screenshots/categories2.png)
+
 ###### Sample Vehicle **Item**
 ![GitHub Logo](/screenshots/VehicleItems.png)
 

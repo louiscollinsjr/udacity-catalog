@@ -7,8 +7,11 @@ Registered users will have the ability to post, edit and delete their own items.
 This application will display a number vehicle makes (categories), and allow the users to browse wehcles of each maker.
 Logged in users can create additional makes and vehicles and edit any entrhyies they created.
 
+###### Sample Makes **Categories**
 ![GitHub Logo](/screenshots/catalog.png)
-Format: ![Alt Text](url)
+
+###### Sample Vehicle **Item**
+![GitHub Logo](/screenshots/VehicleItems.png)
 
 ## Getting Started
 

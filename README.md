@@ -50,9 +50,15 @@ Udacity Fullstack for boilerplate CRUD and facebooklogin
 MBD Material bootstrap for front end
 unite gallery for image gallery
 
+# Known Issues
 
 ## Pep8
- Afew long urls were left in as I could not pep8 them
+A few long urls were left in as I could not pep8 them
+
+## All cars must Automatic
+In the add edit item forms the check box for automatic engine is throwing an error is not selected - still a python nube - i'll try fix this tonight.
+
+
 
 ## License
 

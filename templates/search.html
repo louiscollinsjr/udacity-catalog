@@ -1,0 +1,301 @@
+{% extends "layout.html" %}
+{% block title %}CarPop.{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style>
+    .pricing-card ul {
+list-style-type: none;
+padding: 0;
+}
+
+.pricing-card {
+text-align: center;
+}
+
+.pricing-card .striped li {
+border-bottom: 1px solid rgba(238,238,238,.298039);
+margin-bottom: 1rem;
+margin-top: 1rem;
+}
+  </style>
+  {% endblock %}
+<body>
+{% block header %}
+
+{{ super() }}
+    
+        <!--Carousel Wrapper-->
+        <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+    
+          <!--Indicators-->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+          </ol>
+          <!--/.Indicators-->
+    
+          <!--Slides-->
+          <div class="carousel-inner" role="listbox">
+    
+            <!--First slide-->
+            <div class="carousel-item active">
+              <div class="view" style="background-image: url('{{ url_for('static', filename='img/AdobeStock_123522493 900.jpg') }}'); background-repeat: no-repeat; background-size: cover;background-position: 10% 90%;">
+              <!-- <img src="{{ url_for('static', filename='nature7.jpg') }}">  -->
+                <!-- Mask & flexbox options-->
+                <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+    
+                  <!-- Content -->
+                  <div class="text-left white-text mx-5 wow fadeIn">
+                      <h1 class="mb-4">
+                          <span style="font-weight: 900; font-size: 150%;" class="h1">The CarPopStar<sup><span class="text-small h6"><i class=" text-small fa fa-star" aria-hidden="true"></i></span></sup><br/>Promise to You</span> 
+                        <!-- <strong style="font-weight: 900">C&C Auto Sales and Repair<br/> 
+                        Promise to You</strong> -->
+                      </h1>
+      
+                      <p class="mb-3 d-none d-md-block" style="font-size: 150%;">
+                        <strong>CarPopStar helps buyers find the <br/>best priced used vehicles on the market.</strong>
+                      </p>
+      
+                      <a target="_blank" href="#" class="btn btn-primary disabled">Find your next car
+                      </a>
+                    </div>
+                    <!-- Content -->
+    
+                </div>
+                <!-- Mask & flexbox options-->
+    
+              </div>
+            </div>
+            <!--/First slide-->
+    
+            <!--Second slide-->
+            <div class="carousel-item">
+              <div class="view" style="background-image: url('{{ url_for('static', filename='img/AdobeStock_123522493 900.jpg') }}'); background-repeat: no-repeat; background-size: cover;background-position: 10% 90%;">
+    
+                <!-- Mask & flexbox options-->
+                <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+    
+                  
+    
+                </div>
+                <!-- Mask & flexbox options-->
+    
+              </div>
+            </div>
+            <!--/Second slide-->
+    
+            
+    
+          </div>
+          <!--/.Slides-->
+    
+          <!--Controls-->
+          <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+          <!--/.Controls-->
+    
+        </div>
+        <!--/.Carousel Wrapper-->
+    
+{% endblock %}  
+    
+{% block content %}
+<div  style="background-color: #f0f2f4;"  >
+  <div class="container" style="padding:25px;">
+    <div class="row d-flex justify-content-left">
+  <div class=" col-4">
+     <h2>Sell Your Car</h2>
+     <h6>Make more money when you sell your car yourself. Choose a package and price that works for you.</h6>
+     <button type="button" class="btn btn-primary btn-sm" disabled>Create Your Ad</button>
+     <button type="button" class="btn btn-primary btn-sm" disabled>Manage Your Ad</button>
+    </div>
+   <div class="col-1">
+
+   </div>
+   <!-- <div class="col-4">
+      <h2>CarPopStar Value</h2>
+      <h6>Find out what your car is worth to an individual buyer or dealer in your area and decide how to sell or trade.</h6>
+      <button type="button" class="btn btn-primary btn-sm" disabled>Get CarPopStar Value</button>
+    </div> -->
+   </div>
+   </div>
+</div>
+
+
+<div class="container">
+  <!-- Section: Pricing v.5 -->
+<section class="text-center my-5">
+
+    <!-- Section heading -->
+    <h2 class="h1-responsive font-weight-bold text-center my-5">Our pricing plans</h2>
+    <!-- Section description -->
+    <p class="text-center w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam
+      eum porro a pariatur veniam.</p>
+  
+    <!-- Grid row -->
+    <div class="row" style="text-align: center;">
+  
+      <!-- Grid column -->
+      <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+  
+        <!-- Card -->
+        <div class="pricing-card card">
+  
+          <!-- Content -->
+          <div class="card-body">
+            <h5 class="font-weight-bold mt-3">Indivdual</h5>
+  
+            <!-- Price -->
+            <div class="price pt-0" style="margin-top:20px;">
+              <h2 class="number red-text mb-0">$1</h2>
+            </div>
+  
+            <ul class="striped mb-1">
+              <li>
+                <p><strong>1</strong> Four Day Ad</p>
+              </li>
+              <li>
+                <p><strong>1</strong> Relist</p>
+              </li>
+              <li>
+                <p><strong>Unlimited</strong> views</p>
+              </li>
+              <li>
+                <p><strong>$200</strong> gift card</p>
+              </li>
+            </ul>
+            <a class="btn btn-primary btn-rounded mb-4 disabled"> Create Your AD</a>
+  
+          </div>
+          <!-- Content -->
+  
+        </div>
+        <!-- Card -->
+  
+      </div>
+      <!-- Grid column -->
+  
+      <!--  Grid column  -->
+    <div class="col-lg-4 col-md-6 mb-md-0 mb-4">
+
+        <!-- Card -->
+        <div class="card card-image" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/pricing-table%20(8).jpg');">
+  
+          <!-- Pricing card -->
+          <div class="text-white text-center pricing-card d-flex align-items-center rgba-indigo-strong py-3 px-3 rounded">
+  
+            <!-- Content -->
+            <div class="card-body" >
+              <h5 class="font-weight-bold mt-2">Dealer Pro 20</h5>
+  
+              <!--Price -->
+              <div class="price pt-0" style="margin-top:20px;">
+                <h2 class="number mb-0">$10/mo</h2>
+              </div>
+  
+              <ul class="striped mb-0">
+                <li>
+                  <p><strong>20</strong> Ads</p>
+                </li>
+                <li>
+                  <p><strong>20</strong>  Relist</p>
+                </li>
+                <li>
+                  <p><strong>Unlimited</strong> views</p>
+                </li>
+                <li>
+                  <p><strong>20</strong> Promoted Ads</p>
+                </li>
+              </ul>
+              <a class="btn btn-rounded btn-outline-white disabled">Get Started</a>
+  
+            </div>
+            <!-- Content -->
+  
+          </div>
+          <!-- Pricing card -->
+  
+        </div>
+        <!-- Card -->
+      </div>
+      <!-- Grid column -->
+  
+      <!-- Grid column -->
+      <div class="col-lg-4 col-md-6">
+  
+        <!-- Card -->
+        <div class="pricing-card card">
+  
+          <!-- Content -->
+          <div class="card-body">
+            <h5 class="font-weight-bold mt-3">Enterprise</h5>
+  
+            <!-- Price -->
+            <div class="price pt-0" style="margin-top:20px;">
+              <h2 class="number red-text mb-0">$30/mo</h2>
+            </div>
+  
+            <ul class="striped mb-1">
+              <li>
+                <p><strong>Unlimited</strong> Ads</p>
+              </li>
+              <li>
+                <p><strong>Unlimited</strong> Relist</p>
+              </li>
+              <li>
+                <p><strong>Unlimited</strong> views</p>
+              </li>
+              <li>
+                <p><strong>Unlimited</strong> Promoted Ads</p>
+              </li>
+            </ul>
+            <a class="btn btn-primary btn-rounded mb-4 disabled"> Get Started</a>
+  
+          </div>
+          <!-- Content -->
+  
+        </div>
+        <!-- Card -->
+  
+      </div>
+      <!-- Grid column -->
+  
+    </div>
+    <!-- Grid row -->
+  
+  </section>
+  <!-- Section: Pricing v.5 -->
+</div>
+
+<div class = "container" style="margin-top:60px;margin-bottom:60px;">
+<!-- <p class="h6">Popular Vehicles</p> -->
+<!-- <br/><br/> -->
+<p class="h6">Popular Car Makes ({{makers|length}})</p>
+<div class="columns" style="margin-top:15px;">
+<ul class="text-small">
+
+    {% for gMaker in globalMakers %}
+      {% if gMaker.make_is_common == "1": %}
+        {% for maker in makers %}
+          {% if maker.name == gMaker.make_display: %}
+           <li><a class="text-primary col-3" href = "{{url_for('showTransportation', maker_id = maker.id)}}"><b>{{gMaker.make_display}}</b></a></li>
+       {% endif%}
+      {% endfor %} 
+      {%else%}  
+      <li class="text-muted col-3">{{gMaker.make_display}}</li>
+    {% endif %}
+{% endfor %}
+
+</ul>
+</div>
+</div>
+{% endblock %}
+
+

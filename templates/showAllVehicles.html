@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block title %}CarPop.{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+<body>
+{% block headerlight %}
+
+{{ super() }}
+
+    
+{% endblock %}  
+    
+{% block content %}
+<div class = "container" style="margin-top:160px;">
+    <h1 style="font-weight: 900;margin-bottom:40px;">Vehicle Dashboard <span class="small">({{ itemCount }} Items)</span></h1>
+   
+     <br/><br/>
+        <p class="h6">Vehicles on CP<sup><span class="text-small"><i class=" text-small fa fa-star" aria-hidden="true"></i></span></sup></p>
+        {% if items !=[] %}
+        <br/>
+        {% for i in items %}
+            <img src="https://picsum.photos/150/150">
+            <div class="col-5">{{i.year}} {{i.make}} {{i.model}} vin:<strong>{{i.vin}} </strong> created by: {{i.user.name}}
+                <a href="{{url_for('deleteTransportationItem', maker_id = i.maker_id, transportation_id=i.id ) }}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+            </div> 
+            {% endfor %}
+    <br/><br/>
+    
+    {% else %}
+		<p> You currently have no vehicles. <p>
+            {% endif %} 
+        </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block title %}CarPop.{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+<body>
+{% block headerlight %}
+
+{{ super() }}
+
+    
+{% endblock %}  
+    
+{% block content %}
+
+
+<div class = "container" style="margin-top:160px;">
+		<h1> Edit Maker </h1>
+<form action="{{ url_for('editMaker',maker_id = maker.id)}}" method = 'post'>
+
+
+	<p>Name:</p>
+		<input type ='text' size='30' name='name' placeholder = '{{maker.name }}'>
+
+
+<input type='submit' value='Edit'>
+
+
+<a href = "{{url_for('showMakers')}}"> Cancel </a>
+
+</form>
+</div>
+{% endblock %}

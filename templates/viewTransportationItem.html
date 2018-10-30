@@ -1,0 +1,161 @@
+{% extends "layout.html" %}
+{% block title %}CarPop.{% endblock %}
+{% block head %}
+  {{ super() }}
+  <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+		<script type='text/javascript' src="{{ url_for('static', filename='unitegallery/js/unitegallery.min.js') }}"></script> 
+		
+		<link rel='stylesheet' href="{{ url_for('static', filename='unitegallery/css/unite-gallery.css') }}" type='text/css' /> 
+		<script type='text/javascript' src="{{ url_for('static', filename='unitegallery/themes/default/ug-theme-default.js') }}"></script> 
+        <link rel='stylesheet' href="{{ url_for('static', filename='unitegallery/themes/default/ug-theme-default.css') }}" type='text/css' /> 
+        
+{% endblock %}
+<body>
+{% block headerlight %}
+
+{{ super() }}
+
+    
+{% endblock %}  
+    
+{% block content %}
+<div class = "container" style="margin-top:160px;">
+    <a href="{{url_for('showMakers')}}"><h6><i class="fa fa-share-square-o" aria-hidden="true"></i> Goto Vehicle Make Dashboard</h6> </a>
+    <a href = "{{url_for('newTransportationItem', maker_id = item.maker_id )}}"><h6> <i class="fa fa-plus" aria-hidden="true"></i> Add Transportation</h6> </a>
+    <br/><br/><br/>
+    <h3 style="font-weight: 900;margin-bottom:40px;">{{item.year}} {{item.make}} {{item.model}}  </h3>
+        <p class="h6">Vehicle Details </p>
+        
+        <br/>
+
+        <div id="gallery" style="display:none;margin-left: auto;
+        margin-right: auto;" class="">
+		
+                <img alt="Image 1 Title" src="{{ url_for('static', filename='img/%s1.jpg' % item.make) }}" 
+                    data-image="{{ url_for('static', filename='img/%s1.jpg' % item.make) }}" 
+                    data-description="">
+                
+                <img alt="Image 2 Title" src="{{ url_for('static',filename='img/%s2.jpg' % item.make) }}" 
+                    data-image="{{ url_for('static', filename='img/%s2.jpg' % item.make) }}" 
+                    data-description="">
+                <img alt="Image 1 Title" src="{{ url_for('static', filename='img/%s3.jpg' % item.make) }}" 
+                    data-image="{{ url_for('static', filename='img/%s3.jpg' % item.make) }}" 
+                    data-description="">
+                
+                <img alt="Image 2 Title" src="{{ url_for('static', filename='img/%s4.jpg' % item.make) }}" 
+                    data-image="{{ url_for('static', filename='img/%s4.jpg' % item.make) }}" 
+                    data-description="">
+                <img alt="Image 1 Title" src="{{ url_for('static', filename='img/%s5.jpg' % item.make) }}" 
+                    data-image="{{ url_for('static', filename='img/%s5.jpg' % item.make) }}" 
+                    data-description="">
+                
+                <img alt="Image 2 Title" src="{{ url_for('static', filename='img/%s6.jpg' % item.make) }}" 
+                    data-image="{{ url_for('static', filename='img/%s6.jpg' % item.make) }}" 
+                    data-description="">
+                 <img alt="Image 1 Title" src="{{ url_for('static',filename='img/%s7.jpg' % item.make) }}" 
+                    data-image="{{ url_for('static', filename='img/%s7.jpg' % item.make) }}" 
+                    data-description="">
+                
+                <img alt="Image 2 Title" src="{{ url_for('static', filename='img/%s8.jpg' % item.make) }}" 
+                    data-image="{{ url_for('static', filename='img/%s8.jpg' % item.make) }}" 
+                    data-description="">
+            
+            </div>
+
+        <br/>
+        <div class="row">
+                <div class="col-sm-4 mb-3 mb-md-0">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">{{item.mileage}} miles</h5>
+                      <p class="card-text">Mileage</p>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="col-sm-4 mb-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">All Wheel Drive</h5>
+                      <p class="card-text">Drive Type</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">10-Cylinder</h5>
+                            <p class="card-text">Engine</p>
+                          </div>
+                        </div>
+                    </div>
+              </div>
+              <div class="row">
+                    <div class="col-sm-4 mb-3 mb-md-0">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">6-Speed Shiftable Automatic</h5>
+                          <p class="card-text">Transmission</p>
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <div class="col-sm-4 mb-3">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Information Unavailable</h5>
+                          <p class="card-text">MPG</p>
+                        </div>
+                      </div>
+                    </div>
+    
+                    <div class="col-sm-4">
+                            <div class="card">
+                              <div class="card-body">
+                                <h5 class="card-title">Silver</h5>
+                                <p class="card-text">Exterior</p>
+                              </div>
+                            </div>
+                        </div>
+                  </div>
+                  <div class="row">
+                        <div class="col-sm-4 mb-3 mb-md-0">
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">6-Speed Shiftable Automatic</h5>
+                              <p class="card-text">Transmission</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>   
+                  <br/><br/>
+            <div class="col-12">
+                Year: {{item.year}} <br/>
+                Make: {{item.make}} <br/>
+                Model: {{item.model}} <br/>
+                Mileage: {{item.mileage}} mi<br/>
+                Trim: {{item.trim}}<br/>
+                Description: {{item.description}}<br/>
+                Price: {{item.price}}<br/>
+                Vin:<strong>{{item.vin}}</strong>
+                <br/><br/><br/>
+            <a href="{{url_for('editTransportationItem', maker_id = item.maker_id, transportation_id=item.id ) }}" ><i class="fa fa-edit" aria-hidden="true"> Edit Item </i> </a>
+            <br/>
+            <a href="{{url_for('deleteTransportationItem', maker_id = item.maker_id, transportation_id=item.id ) }}"><i class="fa fa-trash" aria-hidden="true"> Delete Item</i></a>
+            <span> created by: {{user.name}}</span>
+        </div>
+         
+    <br/><br/>
+    
+        </div>
+</div>
+
+<script type="text/javascript"> 
+			
+    jQuery(document).ready(function(){ 
+        jQuery("#gallery").unitegallery(); 
+    }); 
+
+</script>
+{% endblock %}

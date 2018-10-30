@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block title %}CarPop.{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+<body>
+{% block headerlight %}
+
+{{ super() }}
+
+    
+{% endblock %}  
+    
+{% block content %}
+<div class = "container" style="margin-top:160px;">
+<h1> Edit Transportation Item </h1>
+
+<form action="#" method = 'post'>
+
+        <p>Make:</p>
+        <input type ='text' size='30' name='make' placeholder = '{{item.make}}'>
+        <p>Model:</p>
+            <input type ='text' size='30' name='model' placeholder = '{{item.model}}'>
+        <p>Year:</p>
+            <input type ='text' size='30' name='year' placeholder = '{{item.year}}'>
+        <p>Trim:</p>
+            <input type ='text' size='30' name='trim' placeholder = '{{item.trim}}'>
+        <p>Mileage:</p>
+            <input type ='text' size='30' name='mileage' placeholder = '{{item.mileage}}'>
+        <p>Vin:</p>
+            <input type ='text' size='30' name='vin' placeholder = '{{item.vin}}'>
+        <p>Price:</p>
+            <input type ='text' size='30' name='price' placeholder = '{{item.price}}'>
+        <p>Description:</p>
+            <input type ='text' size='30' name='description' placeholder = '{{item.description}}'>
+        {% if item.automatic == 'true' %}
+            <p style="margin-top:10px;"><input type ='checkbox'  name='automatic' value='true' checked>Automatic Transmission</p>
+        {% else %}
+            <p style="margin-top:10px;"><input type ='checkbox'  name='automatic'>  Automatic Transmission</p>
+        {% endif %}
+        <br/>
+
+<input type='submit' value='Edit'>
+
+
+</form>
+<a href = "{{url_for('showMakers')}}"> Cancel </a>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block title %}CarPop.{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+<body>
+{% block header %}
+
+{{ super() }}
+
+    
+{% endblock %}  
+    
+{% block content %}
+<!-- <div style="height: 20vh; background:#0075d2; opacity:1;"> -->
+
+</div>
+<div class = "container" style="margin-top:160px;">
+    <h1 style="font-weight: 900;margin-bottom:40px;">Vehicle Makes Dashboard <span class="small"></span></h1>
+    <a href="{{url_for('showVehicles')}}"><h6><i class="fa fa-share-square-o" aria-hidden="true"></i> Goto Vehicles Dashboard</h6> </a>
+    <a href="{{url_for('newMaker')}}" > <h6> <i class="fa fa-plus" aria-hidden="true"></i> Add New Vehicle Maker</h6></a>
+    <br/><br/>
+        <p class="h6">Vehicle Makers in the Db </p>
+        <div class="columns" style="margin-top:15px;">
+            <ul class="text-small">
+        {% for maker in makers %}
+        <li>
+        <a href = "{{url_for('showTransportation', maker_id = maker.id)}}" class="text-dark">{{maker.name}}</a>
+        <a href = "{{url_for('editMaker',maker_id = maker.id)}}"><i class="fa fa-edit" aria-hidden="true"></i></a>
+        <a href = "{{url_for('deleteMaker',maker_id = maker.id)}}"><i class="fa fa-trash" aria-hidden="true"></i></a> 
+        </li>
+        {% endfor %}
+        </ul>
+        </div>
+       </div>
+</div>
+{% endblock %}
+
+

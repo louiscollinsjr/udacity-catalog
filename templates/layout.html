@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+  <head>
+    {% block head %}
+    
+    <title>{% block title %}{% endblock %} </title>
+
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+            
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.7/css/mdb.min.css" />
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.7/js/mdb.min.js"></script>
+        
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        
+            <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles/custom.css') }}">
+        
+        <style type="text/css">
+        
+            html,
+            body,
+            header,
+            .carousel {
+             
+              font-size: .875rem;
+            }
+           
+            @media (max-width: 740px) {
+              html,
+              body,
+              header,
+              .carousel {
+                height: 100vh;
+              }
+            }
+        
+            @media (min-width: 800px) and (max-width: 850px) {
+              html,
+              body,
+              header,
+              .carousel {
+                height: 100vh;
+              }
+            }
+        
+            @media (min-width: 800px) and (max-width: 850px) {
+                    .navbar:not(.top-nav-collapse) {
+                        background: #929FBA!important;
+                    }
+                }
+        
+            .navbar-bar > li{
+          margin-left:30px;
+          margin-right:190px;
+        }
+.page-footer{
+    background-color:#ffffff;
+}
+        /*CSS3 multiple columns.*/
+/* Get em size for colums: 184/16 */   
+.columns
+{   
+    -moz-column-width: 11.5em; /* Firefox */
+    -webkit-column-width: 11.5em; /* webkit, Safari, Chrome */
+    column-width: 11.5em;
+}
+/*remove standard list and bullet formatting from ul*/
+.columns ul
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+/* correct webkit/chrome uneven margin on the first column*/
+.columns ul li:first-child
+{
+    margin-top:0px;
+}
+
+.navbar {
+  font-size: 14px;
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 
+  {% if opacity %}
+    {{ opacity }} 
+  {% else %}  
+    1
+  {% endif %}
+    )
+}
+          </style>
+        
+    {% endblock %}
+  </head>
+
+
+
+  <body>
+      {% block header %}
+      <!-- Navbar -->
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+            <div class="container">
+      
+              <!-- Brand -->
+              <a class="navbar-brand" href="http://localhost:8000/">
+                <strong style="font-weight: 900">CarPopStar</strong>
+              </a>
+      
+              <!-- Collapse -->
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+      
+              <!-- Links -->
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+                <!-- Left -->
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" target="_blank">Products</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" target="_blank">Use Cases</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" target="_blank">Pricing</a>
+                  </li>
+                  {%if 'username' not in session %}
+                    <li class="nav-item" style="padding-left:30px;">
+                        <a href="{{url_for('showLogin')}}" class="btn btn-primary btn-sm">Log In</a>
+                    </li>
+                    <!-- <li class="nav-item" style="padding-left:30px;">
+                          <a href="{{url_for('showLogin')}}" class="btn-sm btn btn-primary" target="_blank">Sign Up</a>
+                      </li> -->
+			            {% else %}
+                  <li class="nav-item" style="padding-left:30px;">
+                      <a href="{{url_for('disconnect')}}" class="btn btn-primary btn-sm">Sign out</a>
+                      <img style="width:30px; margin-left:30px;" class="img-fluid z-depth-1 rounded-circle" src="{{ user.picture }}">
+                  </li>
+			            {% endif %}
+                  
+                </ul>
+      
+              </div>
+      
+            </div>
+          </nav>
+          <!-- Navbar -->
+        {% endblock %}
+    <div id="content" style="margin-bottom:30px;">{% block content %}{% endblock %}</div>
+    
+    <div class="page-footer center-on-small-only pt-0 mt-5 ">
+    <footer class="container  py-5">
+      {% block footer %}
+            <div class="row">
+              <div class="col-12 col-md">
+                  <span style="font-weight: 900" class="h1">CP<sup><span class="text-small h6"><i class=" text-small fa fa-star" aria-hidden="true"></i></span></sup></span> 
+                  <small class="d-block mb-3 text-muted">&copy;CarPop.2018</small>
+              </div>
+              <div class="col-6 col-md">
+                <p class="h6">Shop for a Car</p>
+                <ul class="list-unstyled text-small">
+                  <li><a class="text-muted" href="#">Cars for Sale</a></li>
+                  <li><a class="text-muted" href="#">Car Deals</a></li>
+                  <li><a class="text-muted" href="#">Car Dealers</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-md">
+                <p class="h6">Resources</p>
+                <ul class="list-unstyled text-small">
+                  <li><a class="text-muted" href="#">Car Research</a></li>
+                  <li><a class="text-muted" href="#">Car Model Information</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-md">
+                <p class="h6">About Us</p>
+                <ul class="list-unstyled text-small">
+                  <li><a class="text-muted" href="#">Company</a></li>
+                  <li><a class="text-muted" href="#">Corporate Information</a></li>
+                  <li><a class="text-muted" href="#">Become a CarPop. Dealer</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-md">
+                <p class="h6">Affiliates</p>
+                <ul class="list-unstyled text-small">
+                  <li><a class="text-muted" href="#">GoGo.bum</a></li>
+                </ul>
+              </div>
+            </div>
+         
+      {% endblock %}
+    </footer>
+    </div>
+    </div>
+  </body>
+</html>

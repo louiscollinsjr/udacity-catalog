@@ -27,7 +27,7 @@ Logged in users can create additional makes and vehicles and edit any entrhyies 
 3. Launch the Vagrant VM (vagrant up)
 4. Write your Flask application locally in the vagrant/catalog directory (which will automatically be synced to /vagrant/catalog within the VM).
 5. Run python3 setupdatabase.py,to setup database.
-6. Run your application within the VM (python /vagrant/catalog/application.py)
+6. Run your application within the VM (python /vagrant/catalog/**application_pep8.py**)
 7. Access and test your application by visiting http://localhost:8000 locally
 
 You can find the link to the fullstack-nanodegree-vm here: http://github.com/udacity/fullstack-nanodegree-vm
@@ -49,6 +49,10 @@ All vehicles in the database: @app.route('/transportation/JSON')
 Udacity Fullstack for boilerplate CRUD and facebooklogin
 MBD Material bootstrap for front end
 unite gallery for image gallery
+
+
+## Pep8
+ Afew long urls were left in as I could not pep8 them
 
 ## License
 

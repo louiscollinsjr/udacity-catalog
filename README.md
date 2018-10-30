@@ -8,7 +8,7 @@ This application will display a number vehicle makes (categories), and allow the
 Logged in users can create additional makes and vehicles and edit any entrhyies they created.
 
 # Project Display Examples
-n
+
 ###### Sample Makes **Categories**
 ![GitHub Logo](/screenshots/catalog.png)
 
@@ -31,6 +31,13 @@ n
 7. Access and test your application by visiting http://localhost:8000 locally
 
 You can find the link to the fullstack-nanodegree-vm here: http://github.com/udacity/fullstack-nanodegree-vm
+
+## Demo data
+
+The applicatin comes with a data base with two categories and two cars created.
+The applicatin has the  abitiy to create REad update DElete categoies and items you create.
+
+Some the front end does not function, non-funcitoning buttons are diabled.
 
 ## License
 

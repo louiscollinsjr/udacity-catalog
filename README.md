@@ -39,6 +39,17 @@ The applicatin has the  abitiy to create REad update DElete categoies and items 
 
 Some the front end does not function, non-funcitoning buttons are diabled.
 
+##  JSON API data
+
+All vehicles base on make id @app.route('/maker/<int:maker_id>/transportation/JSON')
+All vehicle makes in the database: @app.route('/maker/JSON') 
+All vehicles in the database: @app.route('/transportation/JSON')
+
+## Extranal Sources
+Udacity Fullstack for boilerplate CRUD and facebooklogin
+MBD Material bootstrap for front end
+unite gallery for image gallery
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
